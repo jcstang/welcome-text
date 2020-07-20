@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 import "./index.css";
-import quiz from "./questions";
+import facts from "../../utils/facts";
 
 let positionInList = 0;
 
 export default function Card() {
-  const [title, setTitle] = useState(quiz.questionList[0].title);
+  const [title, setTitle] = useState(facts.factsList[0].title);
   const [cardDescription, setCardDescription] = useState(
-    quiz.questionList[0].description
+    facts.factsList[0].description
   );
-  const [cardLink, setCardLink] = useState(quiz.questionList[0].link);
+  const [cardLink, setCardLink] = useState(facts.factsList[0].link);
 
   const nextButtonClicked = (event) => {
     event.preventDefault();
     positionInList++;
 
-    if (positionInList < quiz.questionList.length) {
-      setTitle(quiz.getCurrentCard(positionInList).title);
-      setCardDescription(quiz.getCurrentCard(positionInList).description);
-      setCardLink(quiz.getCurrentCard(positionInList).link);
+    if (positionInList < facts.factsList.length) {
+      setTitle(facts.getCurrentCard(positionInList).title);
+      setCardDescription(facts.getCurrentCard(positionInList).description);
+      setCardLink(facts.getCurrentCard(positionInList).link);
+    } else {
+      console.log("ran out of questions");
     }
   };
 

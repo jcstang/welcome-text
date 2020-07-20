@@ -1,4 +1,9 @@
-const listOfQuestions = [
+// ***************************************************************************
+// facts.js
+// This is the source of the questions from the quiz.
+// ***************************************************************************
+
+const listOfFacts = [
   {
     title: "Hi0",
     description: "some stuff",
@@ -22,8 +27,8 @@ const listOfQuestions = [
 ];
 
 const getCurrentCard = (index) => {
-  if (index >= listOfQuestions.length) {
-    console.log("too high!!!!");
+  if (index >= listOfFacts.length) {
+    // console.log("too high!!!!");
     return {
       title: "end",
       description: "of the list",
@@ -31,11 +36,11 @@ const getCurrentCard = (index) => {
     };
   }
 
-  return listOfQuestions[index];
+  return listOfFacts[index];
 };
 
 module.exports = {
   thing: "hi",
-  questionList: listOfQuestions,
+  factsList: listOfFacts,
   getCurrentCard: getCurrentCard,
 };
