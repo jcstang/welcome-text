@@ -31,14 +31,6 @@ export default function Card() {
   const [cardText, setCardText] = useState(getCurrentCard().description);
   const [cardLink, setCardLink] = useState(getCurrentCard().link);
 
-  const goToNextCard = () => {
-    if (mainIndex === 0) {
-      return listOfQuestions[mainIndex];
-    }
-
-    return listOfQuestions[mainIndex++];
-  };
-
   return (
     <div class="card">
       <div class="card-body">
